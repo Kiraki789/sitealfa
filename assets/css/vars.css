@@ -1,0 +1,37 @@
+@media screen and (max-width: 1023px) {
+    .nav__menu {
+        position: fixed;
+        background-color: #F1F9FE;
+        border: 1px solid #BEDBEF;
+        box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
+        bottom: 0.75rem;
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 1.3rem 3rem;
+        border-radius: 1.25rem;
+        transition: 0.4s;
+    }
+
+    .nav__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav__link {
+        color: #143C55;
+        display: flex;
+        padding: 0.5rem;
+        border-radius: 50%;
+    }
+
+    .nav__link i {
+        font-size: 1.25rem;
+    }
+
+    .nav__link span {
+        display: none;
+    }
+}
