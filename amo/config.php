@@ -1,5 +1,5 @@
 <?php
-$subdomain     = ''; // поддомен AmoCRM
+$subdomain     = 'klisaa951'; // поддомен AmoCRM
 $client_secret = ''; // Секретный ключ
 $client_id     = ''; // ID интеграции
 $code          = ''; // Код авторизации
