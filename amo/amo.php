@@ -8,11 +8,10 @@ $redirect_uri  = 'https://kiraki789.github.io/site2/amo/amo.php';
 
 require_once 'access.php';
 
-$name = 'Имя клиента';
-$phone = '+380123456789';
-$email = 'email@gmail.com';
-$target = 'Цель';
-$company = 'Название компании';
+$name = '981083';
+$phone = '981085';
+$email = '981087';
+$target = '981089';
 
 $custom_field_id = 454021;
 $custom_field_value = 'тест';
@@ -23,11 +22,11 @@ $price = 0;
 $pipeline_id = 5059931;
 $user_amo = 0;
 
-$utm_source   = '';
-$utm_content  = '';
-$utm_medium   = '';
-$utm_campaign = '';
-$utm_term     = '';
+$utm_source   = '981189';
+$utm_content  = '981191';
+$utm_medium   = '981193';
+$utm_campaign = '981195';
+$utm_term     = '981197';
 $utm_referrer = '';
 
 $data = [
