@@ -1,27 +1,63 @@
-const newsItem = document.querySelectorAll('.news__item');
+const navMenu = document.getElementById('nav-menu'), 
+    icnMenu = document.querySelector('.menu-icon');
 
-newsItem.forEach((item) => {
-    const newsHeader = item.querySelector('.news__item-header');
-
-    newsHeader.addEventListener('click', () => {
-        const openItem = document.querySelector('.news-open');
-
-        toggleItem(item);
-
-        if(openItem && openItem!== item){
-            toggleItem(openItem);
-        }
-    });
+icnMenu.addEventListener('click', () => {
+ 	if(icnMenu.classList.toggle('active')){
+        navMenu.classList.add('show-menu');
+    }else{
+        navMenu.classList.remove('show-menu');
+    }
 });
 
-const toggleItem = (item) => {
-    const newsContent = item.querySelector ('.news__item-content');
+var telInp = $('input[type="tel"]');
+      
+telInp.each(function(){
+  $(this).mask("+7(999) 999-99-99");
+});
 
-    if(item.classList.contains('news-open')){
-        newsContent.removeAttribute('style');
-        item.classList.remove('news-open');
+
+var bgHeader = "bg-header";
+
+function scrollHeader() {
+  // We add pageYOffset for compatibility with IE.
+  if (window.scrollY >= 60 || window.pageYOffset >= 60) {
+    document.getElementsByTagName("header")[0].classList.add(bgHeader);
+  } else {
+    document.getElementsByTagName("header")[0].classList.remove(bgHeader);
+  }
+};
+
+window.addEventListener('scroll', scrollHeader);
+
+const scrollShow = document.getElementById('scroll-up');
+
+function scrollUp() {
+  if (window.scrollY >= 550) {
+    scrollShow.classList.add('show-scroll');
+  } else {
+    scrollShow.classList.remove('show-scroll');
+  }
+};
+
+window.addEventListener('scroll', scrollUp);
+
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener('scroll', navHighlighter);
+
+function navHighlighter() {
+  let scrollY = window.pageYOffset;
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    sectionId = current.getAttribute("id");
+
+    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add("active-link")
     }else{
-        newsContent.style.height = newsContent.scrollHeight + 'px';
-        item.classList.add('news-open');
+      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove("active-link")
     }
+  })
+
 };
